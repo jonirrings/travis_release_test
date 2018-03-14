@@ -1,4 +1,12 @@
 language: rust
 rust:
-  - stable
+- stable
 cache: cargo
+deploy:
+  provider: releases
+  api-key:
+    secure: L9znMfh0fk4pKunfFK7xgcFLo+MPK7NBEj/98EjR53UJlDduUDsGlY9F7dQsHOxY8iHd3Z742rtS3e5NqZZP7/DXdQa8K1xHD/KDBoS6+mHVZi1OwX1+lgJwE+RuFZcqK4lB5Zyq7WRklwNZlIyS1RKhdpCq59+/gcqXurVRadTCSm2a1DDpmKwW+VjFvaG53blBRU+EwP8vxnrHz00pBn9o7YJcdbpIoxJpREmx1xgCLPbU9rRdRIv7YSUyru7G/ckQfv5JZmjcuINfZsMP8xgyjuyMH07wCYiKb0p/8KyfXHbZA0/3YI7uWJN3mK/KldtZX4wEE/GOtLtT8xtsf8fdQgE5BnxIdkRJVDQXEVcZZdd0pAsVakdaRhIVya9yRutuR/bixzBFwbxYXtJ2koZ/r4lCKPg7i9fv+eq9BOQB7kst2gg/bO7+KXjC0zMp6xZCWPQsgF6pVNvmP+lC2XyJXj9lIs6IjgNshUzgWPXWuk5uYl3cQvUbQqJAE90mcL06keOWaxvRzz3/smG1pmkOlPYfr2Q0PbJIi4SykCph2YJU8TSibAsJmkfIdszewORp9aJFf09xzRa9Cv1qBrA33qRWeztb5dt6lrHO1ecyUvxFa9GDbyZsHYmoqSQY3mUlINUp6jaJxP5ZC0/LQN5p8ZqmTHzFhNoqHJ85gm4=
+  file: "target/release/travis_release_test"
+  skip_cleanup: true
+  on:
+    tags: true
